@@ -8,13 +8,14 @@ class Questions
         FROM 
             questions
         WHERE 
-            questions.id = id
+            id = ?
         SQL
-        Question.new(id)
+        Question.new(question.first)
     end
-    def initialize(title,body,user_id)
-        @title = title
-        @body = body
-        @user_id = user_id
+
+    def initialize(questions)
+        @title = questions['title']
+        @body = questions['body']
+        @user_id = questions['user_id']
     end
 end
