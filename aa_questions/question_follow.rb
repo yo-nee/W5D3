@@ -4,7 +4,7 @@ class Question_follow
 
 
  def self.find_by_user(user_id)
-    questions = QuestionsDBConnection.instance.execute (<<-SQL, user_id)
+    questions = QuestionsDBConnection.instance.execute(<<-SQL, user_id)
     SELECT
         *
     FROM

@@ -2,7 +2,7 @@ require_relative "./questions_db.rb"
 
 class Questions
     def self.find_by_id(id)
-        question = QuestionsDBConnection.instance.execute (<<-SQL, id)
+        question = QuestionsDBConnection.instance.execute(<<-SQL, id)
         SELECT 
             *
         FROM 
