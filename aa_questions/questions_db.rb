@@ -12,10 +12,10 @@ class QuestionsDBConnection < SQLite3::Database
 # end
 
     def self.open  #   def initialize
-    @database = SQLite3::Database.new(DB_FILE)
-    @database.results_as_hash = true
-    @database.type_translation = true
-  end
+      @database = SQLite3::Database.new(DB_FILE)
+      @database.results_as_hash = true
+      @database.type_translation = true
+    end
 
     def self.instance
     end
@@ -23,7 +23,8 @@ class QuestionsDBConnection < SQLite3::Database
     def self.reset!
     end
 
-    def self.execute()
+    def self.execute(*input)
+      execute(input)
     end
 
     def self.get_first_row()
@@ -34,3 +35,4 @@ class QuestionsDBConnection < SQLite3::Database
 
     def self.last_insert_row_id
     end
+  end
